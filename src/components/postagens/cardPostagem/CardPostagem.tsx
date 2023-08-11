@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
-import { AuthContext } from '../../../contexts/AuthContext';
-import { toastAlerta } from '../../../utils/toastAlerta';
-import Usuario from '../../../models/Usuario';
+
 
 interface CardPostagemProps {
   post: Postagem
@@ -11,9 +9,6 @@ interface CardPostagemProps {
 
 
 function CardPostagem({post}: CardPostagemProps) {
-
-  const { usuario } = useContext(AuthContext);
-  const isAdmin = usuario.nome == "Adm"
 
   return (
     <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
