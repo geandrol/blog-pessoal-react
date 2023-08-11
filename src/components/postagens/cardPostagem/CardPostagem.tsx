@@ -32,7 +32,6 @@ function CardPostagem({post}: CardPostagemProps) {
                   }).format(new Date(post.data))}</p>
         </div>
       </div>
-      {isAdmin ? 
       <img src="" alt="" />
        <div className="flex">
        <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
@@ -42,7 +41,8 @@ function CardPostagem({post}: CardPostagemProps) {
            <button>Deletar</button>
          </Link>
        </div>
-}
+   
+
      
     </div>
   )
