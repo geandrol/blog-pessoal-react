@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
-
 
 interface CardPostagemProps {
   post: Postagem
 }
 
-
 function CardPostagem({post}: CardPostagemProps) {
-
   return (
     <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
       <div>
@@ -27,18 +24,14 @@ function CardPostagem({post}: CardPostagemProps) {
                   }).format(new Date(post.data))}</p>
         </div>
       </div>
-      <img src="" alt="" />
-       <div className="flex">
-       <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-           <button> Editar</button>
-         </Link>
-         <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-           <button>Deletar</button>
-         </Link>
-       </div>
-   
-
-     
+      <div className="flex">
+      <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
+          <button>Editar</button>
+        </Link>
+        <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
+          <button>Deletar</button>
+        </Link>
+      </div>
     </div>
   )
 }
